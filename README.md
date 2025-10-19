@@ -570,6 +570,102 @@ This project is open source and available under the [MIT License](LICENSE).
 - Inspired by the need for simple automation tools
 - Community feedback and feature requests
 
+## 🔧 Technical Documentation
+
+For developers and advanced users who want to understand how the application works internally:
+
+### 📚 Available Documentation
+
+#### **[TECHNICAL_DOCS.md](TECHNICAL_DOCS.md)** - Complete Technical Guide
+- **Application Architecture**: High-level design and component structure
+- **Code Structure**: Detailed explanation of classes and methods
+- **Core Algorithms**: Character parsing, key pressing engine, timing system
+- **Threading Model**: How the application handles concurrent operations
+- **GUI Implementation**: Layout management and user interface design
+- **Character Processing**: How characters are mapped to key codes
+- **Error Handling**: Exception handling and recovery mechanisms
+- **Extension Points**: How to add new features and customize the application
+
+#### **Key Technical Highlights**
+
+##### **🏗️ Architecture Overview**
+```java
+Main.java (Single-file application)
+├── Main class                 // Entry point & CLI interface
+└── AutoKeyPresserUI class    // Complete GUI implementation
+    ├── UI Components         // Swing-based interface
+    ├── Robot Integration     // Java AWT Robot for key simulation
+    ├── Threading Management  // Background processing
+    └── Event Handling        // User interaction management
+```
+
+##### **⚙️ Core Engine Process**
+1. **Input Parsing**: Character array validation and conversion
+2. **Timing Calculation**: Duration and interval processing  
+3. **Thread Creation**: Background execution thread
+4. **Key Simulation**: Robot class integration for system-level key presses
+5. **Progress Tracking**: Real-time logging and status updates
+6. **Graceful Shutdown**: Clean thread termination and resource cleanup
+
+##### **🧵 Threading Strategy**
+- **Main Thread (EDT)**: GUI events and user interactions
+- **Background Thread**: Key pressing loop and timing management
+- **Thread-Safe Communication**: Volatile flags and SwingUtilities
+- **Clean Shutdown**: Proper thread lifecycle management
+
+##### **🎯 Key Features Explained**
+- **Character Cycling**: Array index management with modulo arithmetic
+- **Precise Timing**: Drift correction using system clock
+- **Cross-Platform Keys**: Java KeyEvent constants for compatibility
+- **Shift Key Handling**: Automatic detection for uppercase and symbols
+- **Mouse Integration**: Cursor position tracking and movement
+- **Error Recovery**: Graceful handling of system restrictions
+
+#### **🔍 For Different Audiences**
+
+##### **Developers & Contributors**
+- Study `TECHNICAL_DOCS.md` for complete implementation details
+- Review threading model for concurrent programming patterns
+- Examine error handling strategies for robust application design
+- Understand extension points for adding new features
+
+##### **System Administrators** 
+- Learn about Robot class permissions and security considerations
+- Understand system-level integration requirements
+- Review cross-platform compatibility implementation
+
+##### **Computer Science Students**
+- Study GUI programming with Java Swing
+- Learn thread-safe programming techniques
+- Examine real-world application of design patterns
+- Understand system-level programming with Robot class
+
+##### **Automation Engineers**
+- Understand timing precision and accuracy mechanisms
+- Learn character-to-keycode mapping strategies
+- Study error handling in automation scenarios
+- Review extensibility for custom automation needs
+
+### 📖 Reading Guide
+
+1. **Start with**: [TECHNICAL_DOCS.md](TECHNICAL_DOCS.md) - Main technical documentation
+2. **Then review**: Source code `src/Main.java` with documentation as reference
+3. **For specific topics**: Use the technical docs table of contents
+4. **For implementation**: Follow code examples and algorithm explanations
+
+### 💡 Learning Outcomes
+
+After reviewing the technical documentation, you'll understand:
+
+- ✅ **Java Swing Architecture**: Complete GUI application structure
+- ✅ **Threading in GUI Applications**: Background processing with UI updates
+- ✅ **System Integration**: Using Robot class for automation
+- ✅ **Error Handling Patterns**: Robust exception management
+- ✅ **Timing and Precision**: Accurate interval management
+- ✅ **Cross-Platform Development**: Java compatibility considerations
+- ✅ **User Experience Design**: Real-time feedback and logging
+- ✅ **Code Organization**: Single-file application structure
+
 ---
 
 **⚠️ Disclaimer**: This tool is for legitimate automation and testing purposes. Please use responsibly and in accordance with your local laws and the terms of service of applications you interact with.
